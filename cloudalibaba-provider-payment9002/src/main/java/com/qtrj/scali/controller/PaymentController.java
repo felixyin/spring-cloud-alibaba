@@ -14,7 +14,7 @@ public class PaymentController {
     /**
      * @param id
      * @return
-     * @link http://localhost:9001/payment/nacos/23
+     * @link http://localhost:9002/payment/nacos/23
      */
     @GetMapping("/payment/nacos/{id}")
     public String getPayment(@PathVariable("id") Integer id) {
