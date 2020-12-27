@@ -1,7 +1,7 @@
 version: "2"
 services:
   nacos:
-    image: nacos/nacos-server:latest
+    image: qtrj.i234.me:8084/nacos/nacos-server:latest
     container_name: nacos-standalone
     environment:
     - PREFER_HOST_MODE=hostname

@@ -174,4 +174,5 @@ buildNumber.properties
 
 ### docker
 standalone-logs/
+cluster-logs/
 mysql/
