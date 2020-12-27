@@ -10,9 +10,10 @@ spring:
       config:
         server-addr: localhost:8848 # 配置中心
         file-extension: yml # 这里指定的文件格式需要和nacos上新建的配置文件后缀相同，否则读不到
-#        group: DEV_GROUP
-        group: TEST_GROUP
-        namespace: eaea2886-4b09-4362-8954-c6b95638b3d9
+        group: DEV_GROUP
+        #        group: TEST_GROUP
+        #        namespace: eaea2886-4b09-4362-8954-c6b95638b3d9 # 单机版
+        namespace: testuuid-2376725289347823 # 集群版
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
 # 即：nacos-config-client-dev.yml
