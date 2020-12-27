@@ -1,0 +1,10 @@
+config:
+  info: nacos config server,version=2
+
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 注册中心
