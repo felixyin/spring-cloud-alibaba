@@ -7,6 +7,7 @@ sca 的练习例子
 - jdk8
 - docker
 - intellij idea
+- jmeter
 - lazydocker（可选）
 
 ## nacos、sentinel dashboard启动
