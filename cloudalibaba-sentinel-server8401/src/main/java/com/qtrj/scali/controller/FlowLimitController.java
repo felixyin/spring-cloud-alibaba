@@ -3,6 +3,7 @@ package com.qtrj.scali.controller;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ public class FlowLimitController {
     /**
      * 小提示：Chrome ctrl/command 选择两个窗口后，刷新快捷键刷新页面会同时刷新
      * 配置参数后刷新再手动加速访问一下会看到限流效果的。
+     *
      * @return
      * @link http://localhost:8401/testA
      */
@@ -58,7 +60,10 @@ public class FlowLimitController {
     @GetMapping("/testException")
     public String testException() {
         log.info("testException 异常比例");
-        int age = 10 / 0;
+        int a = RandomUtils.nextInt(0, 10);
+        if (a < 4) {
+            int age = 10 / 0;
+        }
         return "testException -----";
     }
 
@@ -73,7 +78,7 @@ public class FlowLimitController {
     @SentinelResource(value = "testHotKey", blockHandler = "dealTestHotKey")
     public String testHotKey(@RequestParam(value = "p1", required = false) String p1,
                              @RequestParam(value = "p2", required = false) String p2) {
-        int age = 10 / 0;
+//        int age = 10 / 0;
         return "testHotKey -----";
     }
 

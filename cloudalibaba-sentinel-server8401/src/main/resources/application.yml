@@ -1,24 +1,49 @@
 server:
   port: 8401
-
 spring:
   application:
     name: cloudalibaba-sentinel-service
   cloud:
     nacos:
       discovery:
+        # Nacos服务注册中心地址
         server-addr: localhost:8848
-        username: nacos
-        password: nacos
     sentinel:
+      eager: true
       transport:
         # sentinel dashboard 地址
-        dashboard: localhost:8081
+        dashboard: localhost:8080
         # 默认为8719，如果被占用会自动+1，直到找到为止
         port: 8719
-
+      # 流控规则持久化到nacos
+      datasource:
+        ds1: # fixme 只能在nacos配置，sentinel只能获取，不能在sentinel配置自动保存到nacos配置中心。
+          nacos:
+            server-addr: "localhost:8848"
+            username: nacos
+            password: nacos
+#            namespace: public
+            data-id: cloudalibaba-sentinel-service
+#            group-id: DEFAULT_GROUP
+            data-type: json
+#            converter-class: com.qtrj.scali.JsonFlowRuleListConverter
+            rule-type: flow
+      #        ds2: # 这个可以实现flow配置的加载
+      #          file:
+      #            file: "classpath: flowrule.json"
+      #            data-type: json
+      #            rule-type: flow
+      http-method-specify: false
+      filter:
+        enabled: true
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+# 激活Sentinel对Feign的支持
+feign:
+  sentinel:
+    enabled: true
+
