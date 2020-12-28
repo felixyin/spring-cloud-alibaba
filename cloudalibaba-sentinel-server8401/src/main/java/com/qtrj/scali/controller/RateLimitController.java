@@ -9,12 +9,6 @@ import com.qtrj.springcloud.entities.Payment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author zzyy
- * @version 1.0
- * @create 2020/03/06
- */
 @RestController
 public class RateLimitController {
 

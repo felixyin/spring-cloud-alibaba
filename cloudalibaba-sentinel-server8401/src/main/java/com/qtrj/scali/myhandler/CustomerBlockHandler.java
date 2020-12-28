@@ -3,12 +3,6 @@ package com.qtrj.scali.myhandler;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.qtrj.springcloud.entities.CommonResult;
 
-/**
- *
- * @author zzyy
- * @version 1.0
- * @create 2020/03/06
- */
 public class CustomerBlockHandler {
 
     public static CommonResult handlerException(BlockException exception) {
