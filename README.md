@@ -56,6 +56,3 @@ docker-compose up
 - 访问：http://localhost:8081/
 - 账号：admin/admin
 
-## 教程
-
-学习视频教程，百度尚硅谷spring cloud2020课程，找到spring cloud alibaba（第18节），开始学习
